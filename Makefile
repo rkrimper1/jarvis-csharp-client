@@ -35,4 +35,4 @@ generate:
 	./generate.sh
 
 clean:
-	rm -rf google pb proto jarvis-csharp-client jarvis-client-version_number-csharp.zip
+	rm -rf obj google pb proto jarvis-csharp-client jarvis-client-version_number-csharp.zip
