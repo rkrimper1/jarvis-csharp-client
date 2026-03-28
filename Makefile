@@ -21,7 +21,7 @@
 #
 
 
-build: clean prep generate create_client
+build: clean prep generate run create_client
 
 prep_and_generate: prep generate
 
@@ -34,5 +34,9 @@ prep:
 generate:
 	./generate.sh
 
+run:
+	dotnet run
+
 clean:
-	rm -rf obj google pb proto jarvis-csharp-client jarvis-client-version_number-csharp.zip
+	rm -rf google pb proto jarvis-csharp-client jarvis-client-version_number-csharp.zip
+	rm -rf obj bin
