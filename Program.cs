@@ -22,6 +22,7 @@ using Jarvis.Security;
 using Jarvis.Common;
 using Jarvis.Business;
 using System.Net.Security;
+using System.Text;
 
 // Allow unencrypted HTTP/2 for local connections
 AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
@@ -41,7 +42,8 @@ var request = new AuthenticateRequest
         Source = "jarvis-csharp-client"
     },
     SubjectId = "tony-stark",
-    Method = AuthMethod.Token
+    Method = AuthMethod.Passcode,
+    CredentialPayload = Google.Protobuf.ByteString.CopyFromUtf8("tony-stark")
 };
 
 // Call Authenticate
